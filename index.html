@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MTD Value List</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      margin: 20px 0;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #f9f9f9;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    img {
+      max-height: 50px;
+    }
+    .stable {
+      color: green;
+      font-weight: bold;
+    }
+    .unstable {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+  <script>
+    function searchTable() {
+      const input = document.getElementById("searchInput");
+      const filter = input.value.toLowerCase();
+      const table = document.getElementById("valueTable");
+      const trs = table.getElementsByTagName("tr");
+      for (let i = 1; i < trs.length; i++) {
+        const row = trs[i].textContent.toLowerCase();
+        trs[i].style.display = row.includes(filter) ? "" : "none";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>MTD Value List</h1>
+  <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for units...">
+  <table id="valueTable">
+    <thead>
+      <tr>
+        <th>Unit</th>
+        <th>Image</th>
+        <th>Value</th>
+        <th>How to Obtain</th>
+        <th>Obtainable</th>
+        <th>Rarity</th>
+        <th>Stability</th>
+        <th>Shiny</th>
+        <th>Crate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dark Matter</td>
+        <td><img src="https://cdn.discordapp.com/attachments/1052780891300184096/1208817932767451146/IMG_5566.png" alt="Dark Matter"></td>
+        <td>3.5M</td>
+        <td>Limited Crate</td>
+        <td>No</td>
+        <td>Mythical</td>
+        <td class="stable">Stable</td>
+        <td>Yes</td>
+        <td>Glitched Crate</td>
+      </tr>
+      <tr>
+        <td>Cyber Bunny</td>
+        <td><img src="https://cdn.discordapp.com/attachments/1052780891300184096/1208817932503302204/IMG_5564.png" alt="Cyber Bunny"></td>
+        <td>25K</td>
+        <td>Event</td>
+        <td>Yes</td>
+        <td>Epic</td>
+        <td class="unstable">Unstable</td>
+        <td>No</td>
+        <td>Spring Crate</td>
+      </tr>
+      <tr>
+        <td>Cosmic Cat</td>
+        <td><img src="https://cdn.discordapp.com/attachments/1052780891300184096/1208817932251629578/IMG_5563.png" alt="Cosmic Cat"></td>
+        <td>500K</td>
+        <td>Cosmic World</td>
+        <td>Yes</td>
+        <td>Legendary</td>
+        <td class="stable">Stable</td>
+        <td>Yes</td>
+        <td>Galaxy Crate</td>
+      </tr>
+      <!-- Add more rows here as needed -->
+    </tbody>
+  </table>
+</body>
+</html>
